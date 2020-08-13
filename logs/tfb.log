@@ -1,0 +1,23 @@
+nohup: ignoring input
+TensorBoard 2.0.2 at http://192.168.46.230:6007/ (Press CTRL+C to quit)
+E0729 20:05:39.028891 140431601923840 directory_watcher.py:242] File logs/Wed Jul 29 03:14:42 2020/train/events.out.tfevents.1596006889.localhost.localdomain.105814.305121.v2 updated even though the current file is logs/Wed Jul 29 03:14:42 2020/train/events.out.tfevents.1596006899.localhost.localdomain.profile-empty
+E0802 13:41:51.026129 140431557805824 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:41:51] code 400, message Bad request syntax ('\x05\x01\x00\x01')
+E0802 13:41:55.335976 140431471933184 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:41:55] code 400, message Bad request version ('\x03\x00(\x00\x04ÿ\x08\x00\x01U\x00\x00\x00MSSQLServer\x00H\x0f\x00\x00')
+E0802 13:41:59.634444 140431557805824 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:41:59] code 400, message Bad request syntax ('\x00:\x00\x00\x01\x00\x00\x00\x019\x01,\x00\x00\x08\x00\x7fÿÆ\x0e\x00\x00\x01\x00\x00\x00\x00:\x00\x00\x08\x00AA\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+E0802 13:42:03.938872 140431471933184 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:42:03] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00')
+E0802 13:42:08.243425 140431557805824 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:42:08] code 400, message Bad request syntax ('\x00\x00\x00T\x00\x03\x00\x00user\x00postgres\x00database\x00postgres\x00application_name\x00psql\x00client_encoding\x00UTF8\x00\x00')
+E0802 13:42:08.244734 140431471933184 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:42:08] code 400, message Bad request syntax ('info')
+W0802 13:42:08.546945 140431471933184 application.py:425] path /_cat not found, sending 404
+E0802 13:42:13.148064 140431471933184 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:42:13] code 400, message Bad HTTP/0.9 request type ('\x80')
+E0802 13:42:17.453224 140431557805824 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:42:17] code 400, message Bad request syntax ('\x00\x00\x00§A\x00\x00\x00\x00\x00\x00Ô\x07\x00\x00\x00\x00\x00\x00admin.$cmd\x00\x00\x00\x00\x00ÿÿÿÿ\x13\x00\x00\x00\x10ismaster\x00\x01\x00\x00\x00\x00')
+E0802 13:42:21.756691 140431557805824 _internal.py:113] 10.10.10.144 - - [02/Aug/2020 13:42:21] code 400, message Bad request syntax ('stat')
+E0811 12:29:28.595564 140431471933184 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:28] code 400, message Bad request syntax ('\x05\x01\x00\x01')
+E0811 12:29:32.766874 140431557805824 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:32] code 400, message Bad request version ('\x03\x00(\x00\x04ÿ\x08\x00\x01U\x00\x00\x00MSSQLServer\x00H\x0f\x00\x00')
+E0811 12:29:37.063136 140431471933184 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:37] code 400, message Bad request syntax ('\x00:\x00\x00\x01\x00\x00\x00\x019\x01,\x00\x00\x08\x00\x7fÿÆ\x0e\x00\x00\x01\x00\x00\x00\x00:\x00\x00\x08\x00AA\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+E0811 12:29:41.368026 140431557805824 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:41] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00')
+E0811 12:29:45.673542 140431557805824 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:45] code 400, message Bad request syntax ('\x00\x00\x00T\x00\x03\x00\x00user\x00postgres\x00database\x00postgres\x00application_name\x00psql\x00client_encoding\x00UTF8\x00\x00')
+E0811 12:29:45.679523 140431471933184 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:45] code 400, message Bad request syntax ('info')
+W0811 12:29:46.114142 140431471933184 application.py:425] path /_cat not found, sending 404
+E0811 12:29:50.580275 140431471933184 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:50] code 400, message Bad HTTP/0.9 request type ('\x80')
+E0811 12:29:54.884991 140431557805824 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:54] code 400, message Bad request syntax ('\x00\x00\x00§A\x00\x00\x00\x00\x00\x00Ô\x07\x00\x00\x00\x00\x00\x00admin.$cmd\x00\x00\x00\x00\x00ÿÿÿÿ\x13\x00\x00\x00\x10ismaster\x00\x01\x00\x00\x00\x00')
+E0811 12:29:59.189873 140431471933184 _internal.py:113] 10.10.10.144 - - [11/Aug/2020 12:29:59] code 400, message Bad request syntax ('stat')
