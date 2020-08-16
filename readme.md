@@ -1,24 +1,21 @@
 ****crnn_by_tensorflow2.2.0****
 =============================
 
-_基于tensorflow2.2.0的CRNN不定长中文字符序列识别模型_
--------------------------------------------
-
-## _让我们先来看一下识别效果吧_~
-
-![图片1](./images/1.png)
-
+****一个基于tensorflow2.2.0的CRNN不定长中文字符序列识别模型****
+```
+凡对本项目有任何疑惑可加QQ群交流：1081332609
+```
 # 一、数据准备
 
 ## 训练数据集链接
-下载后解压至***./dataset/train/***中
+下载后解压至./dataset/train/中
 ```
 链接：https://pan.baidu.com/s/1FgdITVrM_HsyNh7QSpePjw 
 提取码：iakr
 ```
 
 ## 模型结果文件链接
-下载后解压至***./output/***中
+下载后解压至./output/中
 
 ```
 链接：https://pan.baidu.com/s/1ZVej4P099C--zNJd01cqhg 
@@ -70,3 +67,8 @@ docker run --name tfserving-crnn \
 3. 客户端
 
 运行client.ipynb
+
+## 三、效果展示
+
+![图片1](./images/2.png)
+![图片1](./images/1.png)
