@@ -9,14 +9,18 @@
 # 一、数据准备
 
 ## 训练数据集链接
-下载后解压至./dataset/train/中
+下载后解压至./dataset/train/中。
+![图片1](./images/3.png)
 ```
 链接：https://pan.baidu.com/s/1FgdITVrM_HsyNh7QSpePjw 
 提取码：iakr
+解压密码:chineseocr
 ```
 
 ## 模型结果文件链接
+
 下载后解压至./output/中
+
 
 ```
 链接：https://pan.baidu.com/s/1ZVej4P099C--zNJd01cqhg 
