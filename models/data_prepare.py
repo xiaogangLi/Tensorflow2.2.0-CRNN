@@ -54,7 +54,7 @@ def get_image_path(dir_path):
                 file_path = os.path.join(root, file)
                 label_path = file_path.replace('.jpg','.txt')
                 if Path(file_path.replace('.jpg','.txt')).exists():
-                    with open(label_path) as f:
+                    with open(label_path,encoding='utf8') as f:
                         label = f.read().strip()
                     if len(label)<70 and len(label)>0:
                         images.append((file_path, label))

@@ -2,8 +2,7 @@ import tensorflow as tf
 from models.config import NUM_CLASSES, OUTPUT_SHAPE
 
 model = tf.keras.Sequential([
-        #tf.keras.layers.Conv2D(filters=64, kernel_size=3, padding='same',activation='relu',input_shape=OUTPUT_SHAPE),
-        tf.keras.layers.Conv2D(filters=64, kernel_size=3, padding='same',activation='relu'),
+        tf.keras.layers.Conv2D(filters=64, kernel_size=3, padding='same',activation='relu',input_shape=OUTPUT_SHAPE),
         tf.keras.layers.MaxPool2D(pool_size=(2, 2), padding='valid'),
         tf.keras.layers.Conv2D(filters=128, kernel_size=3,padding='same',activation='relu'),
         tf.keras.layers.MaxPool2D(pool_size=(2, 2), padding='valid'),
