@@ -1,4 +1,5 @@
 import os
+import cv2
 import random
 from pathlib import Path
 import tensorflow as tf
@@ -15,22 +16,32 @@ table = tf.lookup.StaticHashTable(
         NUM_CLASSES-2)
 
 #数据预处理方法
-def preprocess_image(image):
-    image = tf.image.decode_jpeg(image, channels=3)
-    image = tf.image.resize(image, [OUTPUT_SHAPE[0], OUTPUT_SHAPE[1]])
-    return image
+def preprocess_image(image, train = True):
+    if train:
+        image_shape = (32, 320, 3)
+    else:
+        image_shape = (32, 1280, 3)
+    img = tf.image.decode_jpeg(image, channels=3)
+    imgH, imgW, imgC = image_shape
+    resized_image = tf.image.resize(img, [imgH, imgW],preserve_aspect_ratio=True)
+    resized_image = resized_image / 255
+    resized_image -= 0.5
+    resized_image /= 0.5
+    padding_im = tf.image.pad_to_bounding_box(resized_image,0,0,imgH, imgW)
+    return padding_im
 
 def load_and_preprocess_image(path,label):
     image = tf.io.read_file(path)
     return preprocess_image(image),label
 
-def load_and_preprocess_image_standard(path):
-    image = tf.io.read_file(path)
-    return preprocess_image(image)/255.0
-
 def load_and_preprocess_image_pridict(path):
     image = tf.io.read_file(path)
-    return preprocess_image(image)
+    return preprocess_image(image, train = False)
+
+def load_and_preprocess_image_draw(path):
+    image = tf.io.read_file(path)
+    img = tf.image.decode_jpeg(image, channels=3)
+    return img
 
 def decode_label(img,label):
     chars = tf.strings.unicode_split(label, "UTF-8")
@@ -54,9 +65,10 @@ def get_image_path(dir_path):
                 file_path = os.path.join(root, file)
                 label_path = file_path.replace('.jpg','.txt')
                 if Path(file_path.replace('.jpg','.txt')).exists():
-                    with open(label_path,encoding='utf8') as f:
+                    with open(label_path) as f:
                         label = f.read().strip()
-                    if len(label)<70 and len(label)>0:
+                    imgs= cv2.imread(file_path)
+                    if imgs.shape[1]/imgs.shape[0] <= 10 and len(label)>0:
                         images.append((file_path, label))
     random.shuffle(images)
     for image,label in images:

@@ -1,7 +1,7 @@
 import json
 
 # 图片大小
-OUTPUT_SHAPE = (32,280,3)
+OUTPUT_SHAPE = (32,320,3)
 
 #项目路径
 WORK_PATH = '/root/python_project/crnn_by_tensorflow2.2.0/'
