@@ -16,27 +16,31 @@ table = tf.lookup.StaticHashTable(
         NUM_CLASSES-2)
 
 #数据预处理方法
-def preprocess_image(image, train = True):
-    if train:
+def preprocess_image(image, mode = 'train'):
+    if mode == 'train':
         image_shape = (32, 320, 3)
     else:
-        image_shape = (32, 1280, 3)
+        image_shape = (32, 720, 3)
     img = tf.image.decode_jpeg(image, channels=3)
     imgH, imgW, imgC = image_shape
     resized_image = tf.image.resize(img, [imgH, imgW],preserve_aspect_ratio=True)
     resized_image = resized_image / 255
     resized_image -= 0.5
     resized_image /= 0.5
-    padding_im = tf.image.pad_to_bounding_box(resized_image,0,0,imgH, imgW)
+    if mode != 'client':
+        padding_im = tf.image.pad_to_bounding_box(resized_image,0,0,imgH, imgW)
+    else:
+        padding_im = resized_image
+        return padding_im.numpy()
     return padding_im
 
 def load_and_preprocess_image(path,label):
     image = tf.io.read_file(path)
     return preprocess_image(image),label
 
-def load_and_preprocess_image_pridict(path):
+def load_and_preprocess_image_pridict(path, mode = 'predict'):
     image = tf.io.read_file(path)
-    return preprocess_image(image, train = False)
+    return preprocess_image(image, mode)
 
 def load_and_preprocess_image_draw(path):
     image = tf.io.read_file(path)
