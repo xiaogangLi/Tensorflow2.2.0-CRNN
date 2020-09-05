@@ -4,7 +4,7 @@ import json
 OUTPUT_SHAPE = (32,320,3)
 
 #项目路径
-WORK_PATH = '/root/python_project/crnn_by_tensorflow2.2.0/'
+WORK_PATH = 'D:\\python-project\\crnn_by_tensorflow2.2.0\\'
 
 #测试文件目录
 TEST_PATH = WORK_PATH + 'dataset/test/'
