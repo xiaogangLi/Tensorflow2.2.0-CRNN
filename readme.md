@@ -2,10 +2,10 @@
 =============================
 
 ****一个基于tensorflow2.2.0的CRNN不定长中文字符序列识别模型****
-
->项目详细介绍可参见：https://blog.csdn.net/lvjianjin128/article/details/108518707
->凡对本项目有任何疑惑可加QQ群交流：1081332609
-
+```
+项目详细介绍可参见：https://blog.csdn.net/lvjianjin128/article/details/108518707
+凡对本项目有任何疑惑可加QQ群交流：1081332609
+```
 # 一、数据准备
 
 ## 训练数据集链接
