@@ -2,10 +2,10 @@
 =============================
 
 ****一个基于tensorflow2.2.0的CRNN不定长中文字符序列识别模型****
-```
-项目详细介绍可参见：https://www.jianshu.com/p/e0d9efaadb0f
-凡对本项目有任何疑惑可加QQ群交流：1081332609
-```
+
+>项目详细介绍可参见：https://blog.csdn.net/lvjianjin128/article/details/108518707
+>凡对本项目有任何疑惑可加QQ群交流：1081332609
+
 # 一、数据准备
 
 ## 训练数据集链接
@@ -64,8 +64,8 @@ docker run --name tfserving-crnn \
         --hostname tfserving-crnn \
         -tid \
         --restart=on-failure:10 \
-        -p 8500:8500 \
-        -p 8501:8501 \
+        -p 7500:8500 \
+        -p 7501:8501 \
         --mount type=bind,source=/root/python_project/crnn_by_tensorflow2.2.0/output,target=/models \
         -e MODEL_NAME=crnn \
         -t tensorflow/serving &
@@ -74,15 +74,16 @@ docker run --name tfserving-crnn \
 ### 2. GPU环境
 
 ```
-docker run --name tfserving-crnn \
-        --hostname tfserving-crnn \
+docker run --name tfserving-crnn-gpu \
+        --hostname tfserving-crnn-gpu \
         -tid \
         --restart=on-failure:10 \
+        --runtime=nvidia \
         -p 8500:8500 \
         -p 8501:8501 \
         --mount type=bind,source=/root/python_project/crnn_by_tensorflow2.2.0/output,target=/models \
         -e MODEL_NAME=crnn \
-        -t tensorflow/serving:latest-gpu &
+        -t tensorflow/serving:2.0.0-gpu &
 ```
 
 ### 3. 客户端
