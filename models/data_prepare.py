@@ -19,23 +19,23 @@ table = tf.lookup.StaticHashTable(
 #数据预处理方法
 def preprocess_image(image, mode = 'train'):
     image = tf.image.decode_jpeg(image, channels=3)
-    image = image / 255
-    image -= 0.5
-    image /= 0.5
     if mode == 'train':
         image_shape = (32, 320, 3)
         # 饱和度
-        image = tf.image.random_saturation(image, 0.1, 5)
+        image = tf.image.random_saturation(image, 0, 3)
         # 色调
-        image = tf.image.random_hue(image, 0.2)
+        image = tf.image.random_hue(image, 0.3)
         # 对比度
-        image = tf.image.random_contrast(image, 0.2, 3)
+        image = tf.image.random_contrast(image, 0.5, 5)
         # 亮度
-        image = tf.image.random_brightness(image, max_delta=0.5)
-        # 随机噪声
-        image = tf.image.random_jpeg_quality(image,0,100)
+        image = tf.image.random_brightness(image, max_delta=0.05)
+    elif mode == 'val':
+        image_shape = (32, 320, 3)
     else:
         image_shape = (32, 720, 3)
+    image = image / 255
+    image -= 0.5
+    image /= 0.5
     imgH, imgW, imgC = image_shape
     resized_image = tf.image.resize(image, [imgH, imgW],preserve_aspect_ratio=True)
     padding_im = tf.image.pad_to_bounding_box(resized_image,0,0,imgH, imgW)
@@ -44,6 +44,11 @@ def preprocess_image(image, mode = 'train'):
 def load_and_preprocess_image(path,label):
     image = tf.io.read_file(path)
     return preprocess_image(image),label
+
+def load_and_preprocess_image_val(path, label, mode = 'val'):
+    image = tf.io.read_file(path)
+    return preprocess_image(image, mode), label
+
 
 def load_and_preprocess_image_pridict(path, mode = 'predict'):
     image = tf.io.read_file(path)
