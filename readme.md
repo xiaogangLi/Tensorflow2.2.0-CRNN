@@ -1,4 +1,4 @@
-****CRNN implementation using tensorflow2.2.0****
+****CRNN implementation using Tensorflow2.2.0****
 =============================
 
 ****一个基于tensorflow2.2.0的CRNN不定长中文字符序列识别模型****
